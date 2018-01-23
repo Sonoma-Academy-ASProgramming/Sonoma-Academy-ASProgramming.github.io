@@ -1,5 +1,5 @@
 ## View our Site
-https://sonoma-academy-asprogramming.github.io/Website/
+https://sonoma-academy-asprogramming.github.io
 
 
 ## About Our Theme
