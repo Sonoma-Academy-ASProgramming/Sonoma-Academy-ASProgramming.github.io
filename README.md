@@ -2,7 +2,7 @@
 https://sonoma-academy-asprogramming.github.io/Website/
 
 
-##About
+## About Our Theme
 TITLE:   
 Neat - 100% Fully Responsive Free HTML5 Bootstrap Template
 
