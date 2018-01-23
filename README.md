@@ -1,4 +1,4 @@
-##View Our Site Here
+## View our Site
 https://sonoma-academy-asprogramming.github.io/Website/
 
 
