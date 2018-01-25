@@ -1,14 +1,14 @@
 
 if(annyang){
-    alert("ANNDR");
+    document.write("Listening...");
 }    
 var command = {
-    'hello': helloFunction
+    'my name is *userName': helloFunction
 };
 
 var helloFunction = function () {
-    alert("Hi");
+    alert("Hello " + userName);
 };
 
-annyang.init(command, true);
+annyang.addCommand(command);
 annyang.start();
