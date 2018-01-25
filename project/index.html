@@ -9,5 +9,19 @@
 Hello1
 </body>
 <script src=""//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
-<script src = "script.js"></script>
+<script>
+ if(annyang){
+    document.write("Listening...");
+}    
+var command = {
+    'my name is *userName': helloFunction
+};
+
+var helloFunction = function () {
+    alert("Hello " + userName);
+};
+
+annyang.addCommand(command);
+annyang.start();
+</script>
 </html>
