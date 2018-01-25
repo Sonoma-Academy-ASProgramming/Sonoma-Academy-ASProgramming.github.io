@@ -1,12 +1,14 @@
+
 if(annyang){
-    document.write("annyang working");
+    alert("ANNDR");
 }    
 var command = {
-    'testing *name' : helloFunction
+    'hello': helloFunction
 };
-var helloFunction = function (name){
-    document.write('name');
+
+var helloFunction = function () {
+    alert("Hi");
 };
-annyang.init(command,true);
-annyang.add(command);
+
+annyang.addCommands(command);
 annyang.start();
