@@ -10,5 +10,5 @@ var helloFunction = function () {
     alert("Hello " + userName);
 };
 
-annyang.addCommand(command);
+annyang.addCommands(command);
 annyang.start();
