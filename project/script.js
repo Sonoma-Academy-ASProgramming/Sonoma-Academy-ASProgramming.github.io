@@ -1,5 +1,5 @@
 var command = {
-    '*name' : helloFunction
+    'testing *name' : helloFunction
 };
 var helloFunction = function (name){
     document.write('name');
