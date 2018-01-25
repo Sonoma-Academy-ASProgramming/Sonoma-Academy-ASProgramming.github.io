@@ -30,6 +30,10 @@ body {
     transition: 0.5s;
 }
 
+.mainTitle {
+    font-size:25px;
+    font-family:"Oxygen", sans-serif;;
+}
 .offcanvas #page {
     overflow: hidden;
     position: absolute;
