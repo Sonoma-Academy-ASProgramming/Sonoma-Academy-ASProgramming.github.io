@@ -7,7 +7,7 @@ var command = {
 };
 
 var helloFunction = function (userName) {
-    alert("Hello " + userName)
+    window.alert("Hello " + userName);
 };
 
 annyang.addCommands(command);
