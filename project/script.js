@@ -7,7 +7,7 @@ var helloFunction = function (userName) {
 };
     
 var command = {
-    'hello *userName': helloFunction(userName){
+    'hello *userName': function(userName){
         alert("Hello" + userName);    
     }
 };
