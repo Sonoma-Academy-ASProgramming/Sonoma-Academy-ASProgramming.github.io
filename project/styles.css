@@ -18,3 +18,15 @@
     font-size:100px;
     animation: loadingTextAnim 1s infinite;
 }
+
+@keyframes mainHeaderDown{
+    from{margin-top:-25%;}
+    to{margin-top:0%;}
+}
+
+.mainHeader{
+    height:150px;
+    width:100%;
+    background-color:darkseagreen;
+    animation: mainHeaderDown 2s forwards;
+}
