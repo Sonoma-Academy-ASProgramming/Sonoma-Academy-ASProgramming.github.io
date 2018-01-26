@@ -9,5 +9,16 @@
     <body>
         Hello
     </body>
-    <script src="script.js"></script>
+    <script>
+        if(annyang){
+            document.write("A");
+        }
+        var tellName = function(userName){
+            alert("Hello " + userName); 
+        var commands = {
+            'my name is *userName': tellName
+        };
+        annyang.addCommands(commands);
+        annyang.start();
+    </script>
 </html>
