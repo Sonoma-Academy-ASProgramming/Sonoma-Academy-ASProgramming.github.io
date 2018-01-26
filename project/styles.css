@@ -1,0 +1,20 @@
+@keyframes loadingTextAnim{
+    0%{
+        margin-left:30%;
+    }
+    50%{
+        margin-left:50%;
+    }
+    100%{
+        margin-left:30%;
+    }
+}
+
+.loadingText{
+    position:absolute;
+    margin-left:40%;
+    margin-top:30%;
+    color:dodgerblue;
+    font-size:100px;
+    animation: loadingTextAnim 1s infinite;
+}

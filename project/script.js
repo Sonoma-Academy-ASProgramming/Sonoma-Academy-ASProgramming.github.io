@@ -1,14 +1,10 @@
-
-if(annyang){
+if (annyang){
     document.write("Listening...");
-    
-var helloFunction = function (userName) {
-    alert("Hi!");
-};
-    
+
 var command = {
-    'hello *userName': function(userName){
-        document.getElementById("result").innerHTML = ("Hello " + userName);    
+    'background color *thisColor':function(thisColor){
+        document.getElementById("result").innerHTML = ("Background Color: " + thisColor);
+        document.getElementById("body").style.backgroundColor = thisColor;
     }
 };
 
