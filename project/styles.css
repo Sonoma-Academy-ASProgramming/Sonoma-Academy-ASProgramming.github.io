@@ -31,3 +31,8 @@
     background-color:#8eff7a;
     animation: mainHeaderDown 2s forwards;
 }
+
+.responseText{
+    position:absolute;
+    font-size:30;
+}
