@@ -1,7 +1,6 @@
 
 if(annyang){
-    document.write("Listening...");
-    document.write("new");
+    document.write("Listening");
 var command = {
     'hello': helloFunction
 };
