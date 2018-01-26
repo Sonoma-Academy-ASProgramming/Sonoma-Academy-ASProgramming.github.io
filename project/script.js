@@ -8,7 +8,7 @@ var helloFunction = function (userName) {
     
 var command = {
     'hello *userName': function(userName){
-        alert("Hello" + userName);    
+        document.getElemenyById("result").innerHTML = ("Hello " + userName);    
     }
 };
 
