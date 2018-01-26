@@ -1,9 +1,9 @@
 
 if(annyang){
     document.write("Listening...");
-    
+    document.write("new");
 var command = {
-    'my name is *userName': helloFunction
+    'hello *userName': helloFunction
 };
 
 var helloFunction = function (userName) {
