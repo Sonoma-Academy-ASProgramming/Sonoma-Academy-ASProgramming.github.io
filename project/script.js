@@ -7,7 +7,9 @@ var helloFunction = function (userName) {
 };
     
 var command = {
-    'hello': helloFunction
+    'hello *userName': helloFunction(userName){
+        alert("Hello" + userName);    
+    }
 };
 
 annyang.addCommands(command);
