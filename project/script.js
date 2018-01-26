@@ -1,12 +1,12 @@
 
 if(annyang){
-    document.write("Listening");
+    document.write("Listening...");
 var command = {
     'hello': helloFunction
 };
 
 var helloFunction = function (userName) {
-    window.alert("Hi!");
+    alert("Hi!");
 };
 
 annyang.addCommands(command);
