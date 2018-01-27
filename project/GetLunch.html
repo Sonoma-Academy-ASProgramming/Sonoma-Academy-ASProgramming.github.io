@@ -2,21 +2,11 @@
 <html class="no-js" lang="">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./jquery-3.3.1.min.js"></script>
+<style>
 
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="./jquery-3.3.1.min.js"></script>
-    <style>
-
-    </style>
+</style>
 </head>
 <body>
 Step 1: Create instance of class "GetMenu"
@@ -44,7 +34,13 @@ Step 3: Get menu
     let a;
 
     class GetMenu {
-        constructor(year, month, day) {
+        constructor() {
+            var method = "GET";
+            var url = "http://www.myschooldining.com/sa";
+            var xhr = new XMLHttpRequest();
+
+            xhr.open(method, url);
+            xhr.send();
             this.date = "";
             console.log("Getting data...");
             $.get("http://www.myschooldining.com/sa", function (data, status) {
