@@ -6,7 +6,7 @@ var command = {
         document.getElementById("body").style.backgroundColor = thisColor;
     },
     'what day is it (today)':function tellDay(){
-        document.getElementById("response").innerHTML = day();
+        document.getElementById("response").innerHTML = day(0);
     }
 };
 
