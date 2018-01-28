@@ -1,38 +1,21 @@
 @keyframes loadingTextAnim{
     0%{
-        margin-left:30%;
+        margin-left:-20%;
+        color:red;
     }
     50%{
-        margin-left:50%;
+        margin-left:17%;
+        color:green;
     }
     100%{
-        margin-left:30%;
+        margin-left:-20%;
+        color:red;
     }
 }
 
-.loadingText{
+.loading-text{
     position:absolute;
-    margin-left:40%;
-    margin-top:30%;
     color:dodgerblue;
     font-size:100px;
     animation: loadingTextAnim 1s infinite;
-}
-
-@keyframes mainHeaderDown{
-    from{margin-top:-25%;}
-    to{margin-top:0%;}
-}
-
-.mainHeader{
-    position:absolute;
-    height:150px;
-    width:100%;
-    background-color:#8eff7a;
-    animation: mainHeaderDown 2s forwards;
-}
-
-.responseText{
-    position:absolute;
-    font-size:30;
 }
