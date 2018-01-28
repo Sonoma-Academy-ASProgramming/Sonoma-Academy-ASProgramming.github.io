@@ -1,3 +1,33 @@
+.body{
+    background-image:url(images/empty-plate.jpg);
+}
+@keyframes main-header-slideup{
+    0%{
+        left:-40%;
+    }
+    20%{
+        left:40%;
+    }
+    40%{
+        left:40%;
+        top:50%;
+        transform:scale(3);
+    }
+    100%{
+        top:5%;
+        left:40%;
+        transform:scale(1.5);
+    }
+}
+.main-header{
+    transform:scale(3);
+    left:-50%;
+    top:50%;
+    position:absolute;
+    background-color:lightgreen;
+    animation:main-header-slideup 3s forwards;
+}
+
 @keyframes loadingTextAnim{
     0%{
         margin-left:-20%;
