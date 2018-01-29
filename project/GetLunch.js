@@ -2,17 +2,17 @@ let date;
 
 function getLunch(year, month, day) {
     date = year.toString() + "-" + ((month < 10) ? "0" + month.toString() : month.toString()) + "-" + ((day < 10) ? "0" + day.toString() : day.toString());
-    console.log("date set to: " + date);
+    console.log("Date set to: " + date);
 
-    var url = "http://query.yahooapis.com/v1/public/yql?q=select * from htmlstring where url='http://www.myschooldining.com/sa'&env=store://datatables.org/alltableswithkeys&format=json";
+    let url = "http://query.yahooapis.com/v1/public/yql?q=select * from htmlstring where url='http://www.myschooldining.com/sa'&env=store://datatables.org/alltableswithkeys&format=json";
 
-    var xmlHttp = new XMLHttpRequest();
+    let xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
             document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
         return [GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()];
     };
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous
+    xmlHttp.open("GET", url, true); // true for asynchronous
     xmlHttp.send(null);
     console.log("Getting data...");
 }
