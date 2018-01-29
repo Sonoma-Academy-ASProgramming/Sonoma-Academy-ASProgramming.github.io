@@ -10,6 +10,9 @@ function getLunch(year, month, day) {
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
             //document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
+            // cond JSON.parse(xmlHttp.responseText).query.results.result.toString();
+            document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
+    origin/master
         return [GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()];
     };
     xmlHttp.open("GET", url, true); // true for asynchronous
@@ -19,7 +22,7 @@ function getLunch(year, month, day) {
 
 
 function GetSoup() {
-    // console.log("Using search string: " + "[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value");
+    console.log("Using search string: " + "[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value");
     return ($("[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value").text()).trim();
 }
 
