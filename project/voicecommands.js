@@ -2,9 +2,8 @@ function printLunch() {
     var date = new Date();
     //console.log(date.getFullYear() + " " + (date.getMonth() + 1) + " " + date.getDate());
     return getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate());
-
 }
-console.log(getLunch(new Date().getFullYear), new Date().getMonth(), new Date.getDate());
+
 function day(increment) {
     var date = new Date();
     switch (date.getDay() + increment) {
