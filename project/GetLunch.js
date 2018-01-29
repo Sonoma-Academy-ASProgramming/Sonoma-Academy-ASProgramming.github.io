@@ -23,25 +23,25 @@ function getLunch(year, month, day) {
 
 function GetSoup() {
     console.log("Using search string: " + "[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value");
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value").text()).trim();
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value").innerHTML()).trim();
 }
 
 function GetSalad() {
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_entree span.item-value").text()).trim();
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_entree span.item-value").innerHTML()).trim();
 }
 
 function GetEntree() {
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_salad span.item-value").text()).trim();
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_salad span.item-value").innerHTML()).trim();
 }
 
 function GetSpecialDietEntree() {
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_specialdietentree span.item-value").text()).trim();
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_specialdietentree span.item-value").innerHTML()).trim();
 }
 
 function GetSides() {
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_sides span.item-value").text()).trim();
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_sides span.item-value").innerHTML()).trim();
 }
 
 function GetDessert() {
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_dessert span.item-value").text()).trim();
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_dessert span.item-value").innerHTML()).trim();
 }
