@@ -44,8 +44,8 @@
       <file leaf-file-name="GetLunch.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/GetLunch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="11" column="91" lean-forward="false" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
+            <state relative-caret-position="336">
+              <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -238,7 +238,7 @@
       <workItem from="1516742435454" duration="1220000" />
       <workItem from="1516744176239" duration="958000" />
       <workItem from="1516919487993" duration="721000" />
-      <workItem from="1517265671257" duration="1871000" />
+      <workItem from="1517265671257" duration="1969000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1516742667740</created>
@@ -272,7 +272,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4770000" />
+    <option name="totallyTimeSpent" value="4868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="2762" height="1790" extended-state="6" />
@@ -435,8 +435,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/GetLunch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="11" column="91" lean-forward="false" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
+        <state relative-caret-position="336">
+          <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
           <folding />
         </state>
       </provider>
