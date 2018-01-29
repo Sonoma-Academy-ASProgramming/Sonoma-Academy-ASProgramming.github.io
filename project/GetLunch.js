@@ -2,26 +2,13 @@
 
     class GetMenu {
         constructor() {
-<<<<<<< HEAD:project/GetLunch.js
             this.date = "";
             console.log("Getting data...");
             // $.get("http://www.myschooldining.com/sa", function (data, status) {
             $.get("./LunchMenu.html", function (data, status) {
-
-=======
-            var method = "GET";
-            var url = "https://www.myschooldining.com/sa";
-            var xhr = new XMLHttpRequest();
-
-            xhr.open(method, url);
-            xhr.send();
-            this.date = "";
-            console.log("Getting data...");
-            $.get(url, function (data, status) {
->>>>>>> origin/master:project/GetLunch.html
                 if (status === "success") {
                     document.getElementById("data").innerHTML = data;
-                    console.log("Get data: Success.")
+
                 } else {
                     alert("Error: " + status);
                 }
