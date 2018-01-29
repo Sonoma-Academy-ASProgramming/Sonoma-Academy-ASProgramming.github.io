@@ -2,7 +2,7 @@ let date;
 
 function getLunch(year, month, day) {
     date = year.toString() + "-" + ((month < 10) ? "0" + month.toString() : month.toString()) + "-" + ((day < 10) ? "0" + day.toString() : day.toString());
-    console.log("Date set to: " + date);
+    console.log("date set to: " + date);
 
     var url = "http://query.yahooapis.com/v1/public/yql?q=select * from htmlstring where url='http://www.myschooldining.com/sa'&env=store://datatables.org/alltableswithkeys&format=json";
 
