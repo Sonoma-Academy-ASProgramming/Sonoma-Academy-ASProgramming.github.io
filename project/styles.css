@@ -64,7 +64,7 @@
     position:absolute;
     color:white;
     text-decoration:none;
-    animation:link-scaleup .5s forwards;
+    animation:link-scaleup .4s forwards;
 }
 
 @keyframes sample-questions-slideup{
