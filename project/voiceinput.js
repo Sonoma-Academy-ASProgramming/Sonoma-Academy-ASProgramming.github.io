@@ -1,4 +1,5 @@
 if (annyang){
+    document.getElementById("mic-status").innerHTML = "Listening...";
 var command = {
     'background (color) *thisColor':function(thisColor){
         document.getElementById("body").style.backgroundColor = thisColor;
