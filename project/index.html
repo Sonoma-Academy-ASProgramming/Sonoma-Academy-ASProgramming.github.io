@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
         <link rel="stylesheet" type="text/css" href="bootstrap.css">
         <script src="annyang.min.js"></script>
+        <script src="jquery-3.3.1.min.js"></script>
         <meta charset="UTF-8">
         <title>project</title>
     </head>
@@ -14,7 +15,7 @@
         <h2 id="welcome-message" class="main-header" style="position:absolute top:50%">Welcome!</h2>
         <p id="mic-status" style="position:absolute">waiting...</p>
         <div class="sample-questions">
-            <h2 onclick="examplesDownSlide()">ask me:</h2>
+            <h2 onclick="printLunch()">ask me:</h2>
             <h3>what's for lunch today?</h3>
             <p></p>
             <h4>how's the soup lookin?</h4>
@@ -22,6 +23,7 @@
         </div>
         <p id="response">...</p>
     </body>
+    <script type="text/javascript" src="GetLunch.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="voicecommands.js"></script>
     <script type="text/javascript" src="voiceinput.js"></script>

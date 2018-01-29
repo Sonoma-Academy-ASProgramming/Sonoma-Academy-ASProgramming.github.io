@@ -1,49 +1,12 @@
-<!doctype html>
-<html class="no-js" lang="">
-<head>
-    <meta charset="utf-8">
-    <title></title>
-<script src="./jquery-3.3.1.min.js"></script>
-<style>
-
-</style>
-</head>
-<body>
-Step 1: Create instance of class "GetMenu"
-<button id="btnGetData">Get Data</button>
-<span id="1" style="opacity: 0;">Success.</span>
-<br/>
-Step 2: Set date
-<button id="btnSetDate">Set Date</button>
-<input type="text" id="iptYear" placeholder="Year" size="5">
-<input type="text" id="iptMonth" placeholder="Month" size="2">
-<input type="text" id="iptDay" placeholder="Day" size="1">
-<span id="2" style="opacity: 0;"></span>
-<br/>
-Step 3: Get menu
-<button id="btnGetLunch">What's for LUNCH?</button>
-<span id="3" style="opacity: 0;">That's it, you can also check the console.</span>
-<br/>
-<div id="ans"></div>
-<br/><br/><br/><br/>
-<div id="data" style="visibility: hidden;">
-
-</div>
-</body>
-<script>
-    let a;
+  let a;
 
     class GetMenu {
         constructor() {
-            var method = "GET";
-            var url = "http://www.myschooldining.com/sa";
-            var xhr = new XMLHttpRequest();
-
-            xhr.open(method, url);
-            xhr.send();
             this.date = "";
             console.log("Getting data...");
-            $.get("http://www.myschooldining.com/sa", function (data, status) {
+            // $.get("http://www.myschooldining.com/sa", function (data, status) {
+            $.get("./LunchMenu.html", function (data, status) {
+
                 if (status === "success") {
                     document.getElementById("data").innerHTML = data;
                     console.log("Get data: Success.")
@@ -53,6 +16,31 @@ Step 3: Get menu
             });
         }
     }
+
+    function createCORSRequest(method, url) {
+        var xhr = new XMLHttpRequest();
+        if ("withCredentials" in xhr) {
+
+            // Check if the XMLHttpRequest object has a "withCredentials" property.
+            // "withCredentials" only exists on XMLHTTPRequest2 objects.
+            xhr.open(method, url, true);
+
+        } else if (typeof XDomainRequest != "undefined") {
+
+            // Otherwise, check if XDomainRequest.
+            // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+
+        } else {
+
+            // Otherwise, CORS is not supported by the browser.
+            xhr = null;
+
+        }
+        return xhr;
+    }
+
 
     GetMenu.prototype.GetSoup = function () {
         // console.log("Using search string: " + "[day_no=" + this.date + "] div#sonomaacademy_lunch_soup span.item-value");
@@ -108,7 +96,3 @@ Step 3: Get menu
         })
         //Get soup from date
     });
-
-
-</script>
-</html>

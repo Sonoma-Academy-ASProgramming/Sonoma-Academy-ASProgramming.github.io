@@ -1,3 +1,12 @@
+function printLunch(){
+    var date = new Date();
+    var menu = new GetMenu();
+    console.log(date.getFullYear() + " " + (date.getMonth() + 1) + " " + date.getDate());
+    menu.setDate(date.getFullYear(), date.getMonth()+1, date.getDate());
+    console.log(menu.GetLunch());
+    return menu.GetLunch();
+}
+
 function day(increment) {
     var date = new Date();
     switch(date.getDay() + increment) {
