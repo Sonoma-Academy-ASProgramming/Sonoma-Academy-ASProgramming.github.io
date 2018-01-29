@@ -12,7 +12,6 @@ function getLunch(year, month, day) {
             //document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
             // cond JSON.parse(xmlHttp.responseText).query.results.result.toString();
             document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
-    origin/master
         return [GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()];
     };
     xmlHttp.open("GET", url, true); // true for asynchronous
@@ -20,28 +19,27 @@ function getLunch(year, month, day) {
     console.log("Getting data...");
 }
 
-
 function GetSoup() {
     console.log("Using search string: " + "[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value");
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value").innerHTML()).trim();
+    return $"[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value").text();
 }
 
 function GetSalad() {
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_entree span.item-value").innerHTML()).trim();
+    return $("[day_no=" + date + "] div#sonomaacademy_lunch_entree span.item-value").text();
 }
 
 function GetEntree() {
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_salad span.item-value").innerHTML()).trim();
+    return $("[day_no=" + date + "] div#sonomaacademy_lunch_salad span.item-value").text();
 }
 
 function GetSpecialDietEntree() {
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_specialdietentree span.item-value").innerHTML()).trim();
+    return $("[day_no=" + date + "] div#sonomaacademy_lunch_specialdietentree span.item-value").text();
 }
 
 function GetSides() {
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_sides span.item-value").innerHTML()).trim();
+    return $("[day_no=" + date + "] div#sonomaacademy_lunch_sides span.item-value").text();
 }
 
 function GetDessert() {
-    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_dessert span.item-value").innerHTML()).trim();
+    return $("[day_no=" + date + "] div#sonomaacademy_lunch_dessert span.item-value").text();
 }
