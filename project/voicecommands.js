@@ -1,6 +1,6 @@
-function day(increment){
+function day(increment) {
     var date = new Date();
-    switch(date.getDay() + increment){
+    switch(date.getDay() + increment) {
         case 0:
             return "sunday";
             break;
@@ -22,4 +22,10 @@ function day(increment){
         case 6:
             return "saturday";
     }
+}
+
+function examplesDownSlide() {
+    var sampleQuestions = document.getElementsByClassName("sample-questions");
+    sampleQuestions[0].classList.add("sample-questions-down");
+    sampleQuestions[0].classList.remove("sample-questions");
 }

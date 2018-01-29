@@ -4,7 +4,8 @@ var command = {
     'background (color) *thisColor':function(thisColor){
         document.getElementById("body").style.backgroundColor = thisColor;
     },
-    'what day is it (today)':function tellDay(){
+    'print lunch':function listLunch() {
+        examplesDownSlide();
         document.getElementById("response").innerHTML = day(0);
     }
 };
