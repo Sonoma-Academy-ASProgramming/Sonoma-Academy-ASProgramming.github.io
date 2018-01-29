@@ -12,7 +12,7 @@ function getLunch(year, month, day) {
             document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
         return [GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()];
     };
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous
+    xmlHttp.open("GET", url, true); // true for asynchronous
     xmlHttp.send(null);
     console.log("Getting data...");
 }
