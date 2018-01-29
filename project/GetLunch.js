@@ -12,7 +12,6 @@ function getLunch(year, month, day) {
             //document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
             // cond JSON.parse(xmlHttp.responseText).query.results.result.toString();
             document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
-    origin/master
         return [GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()];
     };
     xmlHttp.open("GET", url, true); // true for asynchronous
