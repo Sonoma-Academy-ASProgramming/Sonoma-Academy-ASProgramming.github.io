@@ -16,7 +16,7 @@ function getLunch(year, month, day) {
         return [GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()];
     }
 };
-xmlHttp.open("GET", url, false); // true for asynchronous
+xmlHttp.open("GET", url, true); // true for asynchronous
 xmlHttp.send(null);
 console.log("Getting data...");
 }
