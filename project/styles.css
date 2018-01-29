@@ -64,7 +64,7 @@
 }
 .feedback:hover{
     position:absolute;
-    color:white;
+    color:#9cf4a7;
     text-decoration:none;
     animation:link-scaleup .4s forwards;
 }
