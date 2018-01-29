@@ -1,15 +1,13 @@
-function printLunch(){
+function printLunch() {
     var date = new Date();
-    var menu = new GetMenu();
     console.log(date.getFullYear() + " " + (date.getMonth() + 1) + " " + date.getDate());
-    menu.setDate(date.getFullYear(), date.getMonth()+1, date.getDate());
-    console.log(menu.GetLunch());
-    return menu.GetLunch();
+    return getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate());
+
 }
 
 function day(increment) {
     var date = new Date();
-    switch(date.getDay() + increment) {
+    switch (date.getDay() + increment) {
         case 0:
             return "sunday";
             break;
