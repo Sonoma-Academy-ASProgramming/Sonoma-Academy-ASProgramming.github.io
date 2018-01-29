@@ -36,14 +36,14 @@ Step 3: Get menu
     class GetMenu {
         constructor() {
             var method = "GET";
-            var url = "http://www.myschooldining.com/sa";
+            var url = "https://www.myschooldining.com/sa";
             var xhr = new XMLHttpRequest();
 
             xhr.open(method, url);
             xhr.send();
             this.date = "";
             console.log("Getting data...");
-            $.get("http://www.myschooldining.com/sa", function (data, status) {
+            $.get(url, function (data, status) {
                 if (status === "success") {
                     document.getElementById("data").innerHTML = data;
                     console.log("Get data: Success.")
