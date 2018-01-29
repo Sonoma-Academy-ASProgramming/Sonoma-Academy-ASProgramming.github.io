@@ -14,7 +14,7 @@ function getLunch(year, month, day) {
             document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
         return [GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()];
     };
-    xmlHttp.open("GET", url, true); // true for asynchronous
+    xmlHttp.open("GET", url, false); // true for asynchronous
     xmlHttp.send(null);
     console.log("Getting data...");
 }
@@ -42,4 +42,25 @@ function GetSides() {
 
 function GetDessert() {
     return $("[day_no=" + date + "] div#sonomaacademy_lunch_dessert span.item-value").text();
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value").text()).trim();
+}
+
+function GetSalad() {
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_entree span.item-value").text()).trim();
+}
+
+function GetEntree() {
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_salad span.item-value").text()).trim();
+}
+
+function GetSpecialDietEntree() {
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_specialdietentree span.item-value").text()).trim();
+}
+
+function GetSides() {
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_sides span.item-value").text()).trim();
+}
+
+function GetDessert() {
+    return ($("[day_no=" + date + "] div#sonomaacademy_lunch_dessert span.item-value").text()).trim();
 }
