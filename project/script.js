@@ -1,4 +1,3 @@
-var lunchDiv;
 var date;
 var blip = new Audio('blip.mp3');
 init();
@@ -80,7 +79,6 @@ function getLunch(year, month, day, callback) {
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
-            lunchDiv = JSON.parse(xmlHttp.responseText).query.results.result.toString();
             callback([GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()]);
         }
     };
