@@ -18,6 +18,11 @@ function init() {
                 blip.play();
                 examplesDownSlide();
                 printLunch();
+            },
+            'what the fuck is for lunch (today)': function LISTLUNCH() {
+                blip.play();
+                examplesDownSlide();
+                printLunch();
             }
         };
 
@@ -64,9 +69,22 @@ function day(increment) {
 }
 
 function examplesDownSlide() {
-    var sampleQuestions = document.getElementsByClassName("sample-questions");
-    sampleQuestions[0].classList.add("sample-questions-down");
-    sampleQuestions[0].classList.remove("sample-questions");
+    try{
+        var sampleQuestions = document.getElementById("sample-questions");
+        sampleQuestions.classList.add("sample-questions-down");
+        sampleQuestions.classList.remove("sample-questions");
+
+    }catch(e){
+
+    }
+    try{
+        var response = document.getElementById("response");
+        response.classList.add("response-disabled");
+        response.classList.remove("response");
+
+    }catch(e){
+
+    }
 }
 
 function getLunch(year, month, day, callback) {
