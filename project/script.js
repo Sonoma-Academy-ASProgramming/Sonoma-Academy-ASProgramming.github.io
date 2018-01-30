@@ -1,4 +1,5 @@
 var date;
+var blip = new Audio('blip.mp3');
 init();
 
 /**
@@ -13,7 +14,8 @@ function init() {
             'background (color) *thisColor': function (thisColor) {
                 document.getElementById("body").style.backgroundColor = thisColor;
             },
-            'what\'s for lunch': function listLunch() {
+            'what\'s for lunch (today)': function listLunch() {
+                blip.play();
                 examplesDownSlide();
                 printLunch();
             }
