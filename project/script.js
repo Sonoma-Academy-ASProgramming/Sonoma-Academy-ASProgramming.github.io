@@ -33,7 +33,6 @@ function printLunch() {
     var responseText = document.getElementById("responseText");
     return getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate(), function (data) {
         responseText.innerHTML = data;
-        lunchDiv = data;
         response.classList.add("response");
         response.classList.remove("response-disabled");
     });
@@ -81,6 +80,7 @@ function getLunch(year, month, day, callback) {
     xmlHttp.onreadystatechange = function () {
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             document.getElementById("data").innerHTML = JSON.parse(xmlHttp.responseText).query.results.result.toString();
+            lunchDiv = JSON.parse(xmlHttp.responseText).query.results.result.toString();
             callback([GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()]);
         }
     };
