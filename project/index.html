@@ -3,17 +3,17 @@
     <head>
         <link rel="stylesheet" type="text/css" href="styles.css">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-        <script src="annyang.min.js"></script>
-        <script src="jquery-3.3.1.min.js"></script>
+        <script src="lib/annyang.min.js"></script>
+        <script src="lib/jquery-3.3.1.min.js"></script>
         <meta charset="UTF-8">
         <title>project</title>
     </head>
-    <body style="background-color:#9cf4a7">
+    <body>
         <div class="header">
             <a href="#" class="feedback">"Feed"back</a>
         </div>
-        <h2 id="welcome-message" class="main-header" style="position:absolute top:50%">Welcome!</h2>
-        <p id="mic-status" style="position:absolute">waiting...</p>
+        <h2 id="welcome-message" class="main-header">Welcome!</h2>
+        <p id="mic-status">waiting...</p>
         <div class="sample-questions">
             <h2 onclick="printLunch()">ask me:</h2>
             <h3>what's for lunch today?</h3>
@@ -22,10 +22,8 @@
             <h5>what's the entree?</h5>
         </div>
         <p id="response">...</p>
-        <div id="data" style="visibility:hidden; position:absolute;">
+        <div id="data">
         </div>
     </body>
     <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="voicecommands.js"></script>
-    <script type="text/javascript" src="voiceinput.js"></script>
 </html>
