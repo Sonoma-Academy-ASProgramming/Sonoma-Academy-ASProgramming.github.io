@@ -142,6 +142,8 @@ body {
     position: absolute;
     background-color: #30c9e8;
     top: 30%;
+    padding-left: 2px;
+    padding-right: 2px;
     left: 10%;
     animation: response-fadein 1s forwards;
 }
