@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" type="text/css" href="styles.css">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <script src="lib/annyang.min.js"></script>
         <script src="lib/jquery-3.3.1.min.js"></script>
-        <meta charset="UTF-8">
         <title>project</title>
     </head>
     <body>
@@ -21,9 +20,12 @@
             <h4>how's the soup lookin?</h4>
             <h5>what's the entree?</h5>
         </div>
-        <p id="response">...</p>
+        <article id="response" class="response-disabled">
+            <h1 style="color:yellow;">Today's Lunch is:</h1>
+            <p style="font-size:15px;" id="responseText"></p>
+        </article>
         <div id="data">
         </div>
     </body>
-    <script type="text/javascript" src="script.js"></script>
+    <script src="script.js"></script>
 </html>

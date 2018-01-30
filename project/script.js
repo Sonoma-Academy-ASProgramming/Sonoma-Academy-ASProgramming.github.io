@@ -13,8 +13,9 @@ function init() {
             'background (color) *thisColor': function (thisColor) {
                 document.getElementById("body").style.backgroundColor = thisColor;
             },
-            'get lunch': function listLunch() {
+            'what\'s for lunch': function listLunch() {
                 examplesDownSlide();
+                printLunch();
             }
         };
 
@@ -25,8 +26,12 @@ function init() {
 
 function printLunch() {
     var date = new Date();
+    var response = document.getElementById("response");
+    var responseText = document.getElementById("responseText");
     return getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate(), function (data) {
-        document.getElementById("response").innerHTML = data;
+        responseText.innerHTML = data;
+        response.classList.add("response");
+        response.classList.remove("response-disabled");
     });
 }
 
