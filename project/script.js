@@ -1,3 +1,4 @@
+var lunchDiv;
 var date;
 var blip = new Audio('blip.mp3');
 init();
@@ -32,6 +33,7 @@ function printLunch() {
     var responseText = document.getElementById("responseText");
     return getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate(), function (data) {
         responseText.innerHTML = data;
+        lunchDiv = data;
         response.classList.add("response");
         response.classList.remove("response-disabled");
     });
