@@ -14,15 +14,16 @@ function init() {
             'background (color) *thisColor': function (thisColor) {
                 document.getElementById("body").style.backgroundColor = thisColor;
             },
-            'what\'s for lunch (today)': function listLunch() {
+            'what the *a is for lunch (today)': function listLunch() {
                 blip.play();
                 examplesDownSlide();
                 printLunch();
             },
-            'what the fuck is for lunch (today)': function LISTLUNCH() {
+            'what(\'s) for lunch (today)': function LISTLUNCH(a) {
                 blip.play();
                 examplesDownSlide();
                 printLunch();
+                console.log(a)
             }
         };
 
@@ -35,8 +36,15 @@ function printLunch() {
     var date = new Date();
     var response = document.getElementById("response");
     var responseText = document.getElementById("responseText");
-    return getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate(), function (data) {
-        responseText.innerHTML = data;
+    getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate(), function (data) {
+
+        console.log(data);
+        let res = "<ul>";
+        data.forEach(function (item) {
+            res += "<li>" + item + "</li>"
+        })
+        res += "</ul>";
+        responseText.innerHTML = res;
         response.classList.add("response");
         response.classList.remove("response-disabled");
     });
