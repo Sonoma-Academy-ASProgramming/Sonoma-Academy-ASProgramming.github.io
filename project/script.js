@@ -43,34 +43,34 @@ function init() {
     }
 }
 
-function printLunch() {
+function printLunch(a) {
     var date = new Date();
     var response = document.getElementById("response");
     var responseText = document.getElementById("responseText");
     getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate(), function (data) {
         console.log(data);
-        let res = "<ul>";
+        let res = "";
 
         if (a === "soup") {
-            data = data[0];
+            res = data[0];
         } else if (a === "entree") {
-            data = data[2]
+            res = data[2]
         } else if (a === "sides") {
-            data = data[4]
+            res = data[4]
         } else if (a === "dessert") {
-            data = data[5]
+            res = data[5]
         } else if (a === "salad") {
-            data = data[1]
+            res = data[1]
         } else if (a === "special diet entree") {
-            data = data[3]
+            res = data[3]
         } else {
+            res = "<ul>";
             data.forEach(function (item) {
                 res += "<li>" + item + "</li>"
-            })
-        
+            });
+            res += "</ul>";
         }
         //            callback([GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()]);
-        res += "</ul>";
 
         responseText.innerHTML = res;
         response.classList.add("response");
