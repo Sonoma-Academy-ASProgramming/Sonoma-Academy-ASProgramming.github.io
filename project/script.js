@@ -17,13 +17,24 @@ function init() {
             'what the *a is for lunch (today)': function listLunch() {
                 blip.play();
                 examplesDownSlide();
-                printLunch();
-            },
-            'what(\'s) for lunch (today)': function LISTLUNCH(a) {
+                printLunch("");
+            }, 'what the *a is the *b lunch (today)': function listLunch(b) {
                 blip.play();
                 examplesDownSlide();
-                printLunch();
-                console.log(a)
+                printLunch(b);
+            },
+
+            'what(\'s) the *b (today)': function LISTLUNCH(b) {
+
+                blip.play();
+                examplesDownSlide();
+                printLunch(b);
+            },
+            'what(\'s) for lunch (today)': function LISTLUNCH() {
+                blip.play();
+                examplesDownSlide();
+                printLunch("");
+                console.log()
             }
         };
 
@@ -37,13 +48,30 @@ function printLunch() {
     var response = document.getElementById("response");
     var responseText = document.getElementById("responseText");
     getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate(), function (data) {
-
         console.log(data);
         let res = "<ul>";
-        data.forEach(function (item) {
-            res += "<li>" + item + "</li>"
-        })
+
+        if (a === "soup") {
+            data = data[0];
+        } else if (a === "entree") {
+            data = data[2]
+        } else if (a === "sides") {
+            data = data[4]
+        } else if (a === "dessert") {
+            data = data[5]
+        } else if (a === "salad") {
+            data = data[1]
+        } else if (a === "special diet entree") {
+            data = data[3]
+        } else {
+            data.forEach(function (item) {
+                res += "<li>" + item + "</li>"
+            })
+        
+        }
+        //            callback([GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()]);
         res += "</ul>";
+
         responseText.innerHTML = res;
         response.classList.add("response");
         response.classList.remove("response-disabled");
@@ -77,20 +105,20 @@ function day(increment) {
 }
 
 function examplesDownSlide() {
-    try{
+    try {
         var sampleQuestions = document.getElementById("sample-questions");
         sampleQuestions.classList.add("sample-questions-down");
         sampleQuestions.classList.remove("sample-questions");
 
-    }catch(e){
+    } catch (e) {
 
     }
-    try{
+    try {
         var response = document.getElementById("response");
         response.classList.add("response-disabled");
         response.classList.remove("response");
 
-    }catch(e){
+    } catch (e) {
 
     }
 }
