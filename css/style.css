@@ -414,6 +414,17 @@ h1, h2, h3, h4, h5, h6, figure {
     position: relative;
 }
 
+#fh5co-hero .flexslider .slides li:after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, .8);
+}
+
 #fh5co-hero .flexslider .flex-control-nav {
     bottom: 80px;
     z-index: 1000;
