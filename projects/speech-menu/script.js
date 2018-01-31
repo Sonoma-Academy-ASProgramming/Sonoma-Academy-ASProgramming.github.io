@@ -26,6 +26,10 @@ function init() {
             },
             'what(\'s) for lunch (today)': function LISTLUNCH() {
                 printLunch("");
+            },
+            'hi *a': function LISTLUNCH(a) {
+                console.log(a);
+                printLunch("")
             }
         };
 
@@ -65,7 +69,7 @@ function printLunch(a) {
             });
             res += "</ul>";
         }
-        $("#title").html("Today's " + (a || "lunch"));
+        $("#title").html("Today's " + (a || "lunch") + ":");
         //            callback([GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()]);
 
         responseText.innerHTML = res;
