@@ -46,6 +46,9 @@ body {
 #data {
     visibility: hidden;
     position: absolute;
+    width: 2px;
+    height: 2px;
+    overflow: hidden;
 }
 
 .header {
