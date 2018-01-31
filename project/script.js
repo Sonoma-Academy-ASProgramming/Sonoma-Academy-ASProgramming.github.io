@@ -1,5 +1,6 @@
 var date;
 var blip = new Audio('blip.mp3');
+var firstQuestion = true;
 init();
 
 /**
@@ -15,26 +16,16 @@ function init() {
                 document.getElementById("body").style.backgroundColor = thisColor;
             },
             'what the *a is for lunch (today)': function listLunch() {
-                blip.play();
-                examplesDownSlide();
                 printLunch("");
-            }, 'what the *a is the *b lunch (today)': function listLunch(b) {
-                blip.play();
-                examplesDownSlide();
+            }, 'what the *a is the *b (today)': function listLunch(a, b) {
                 printLunch(b);
             },
 
             'what(\'s) the *b (today)': function LISTLUNCH(b) {
-
-                blip.play();
-                examplesDownSlide();
                 printLunch(b);
             },
             'what(\'s) for lunch (today)': function LISTLUNCH() {
-                blip.play();
-                examplesDownSlide();
                 printLunch("");
-                console.log()
             }
         };
 
@@ -44,6 +35,8 @@ function init() {
 }
 
 function printLunch(a) {
+    examplesDownSlide();
+    blip.play();
     var date = new Date();
     var response = document.getElementById("response");
     var responseText = document.getElementById("responseText");
@@ -55,10 +48,12 @@ function printLunch(a) {
             res = data[0];
         } else if (a === "entree") {
             res = data[2]
-        } else if (a === "sides") {
+        } else if (a === "sides" || a === "size") {
             res = data[4]
-        } else if (a === "dessert") {
+            a = "sides";
+        } else if (a === "dessert" || a === "desert") {
             res = data[5]
+            a = "dessert";
         } else if (a === "salad") {
             res = data[1]
         } else if (a === "special diet entree") {
@@ -70,39 +65,39 @@ function printLunch(a) {
             });
             res += "</ul>";
         }
+        $("#title").html("Today's " + (a || "lunch"));
         //            callback([GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()]);
 
         responseText.innerHTML = res;
-        response.classList.add("response");
-        response.classList.remove("response-disabled");
+
     });
 }
-
-function day(increment) {
-    var date = new Date();
-    switch (date.getDay() + increment) {
-        case 0:
-            return "sunday";
-            break;
-        case 1:
-            return "monday";
-            break;
-        case 2:
-            return "tuesday";
-            break;
-        case 3:
-            return "wednesday";
-            break;
-        case 4:
-            return "thursday";
-            break;
-        case 5:
-            return "friday";
-            break;
-        case 6:
-            return "saturday";
-    }
-}
+//
+// function day(increment) {
+//     var date = new Date();
+//     switch (date.getDay() + increment) {
+//         case 0:
+//             return "sunday";
+//             break;
+//         case 1:
+//             return "monday";
+//             break;
+//         case 2:
+//             return "tuesday";
+//             break;
+//         case 3:
+//             return "wednesday";
+//             break;
+//         case 4:
+//             return "thursday";
+//             break;
+//         case 5:
+//             return "friday";
+//             break;
+//         case 6:
+//             return "saturday";
+//     }
+// }
 
 function examplesDownSlide() {
     try {
@@ -114,12 +109,22 @@ function examplesDownSlide() {
 
     }
     try {
-        var response = document.getElementById("response");
+        var response = document.getElementById("response");/*
         response.classList.add("response-disabled");
         response.classList.remove("response");
-
+        response.classList.remove("response-fadeoutin");*/
+        if (firstQuestion) {
+            response.classList.remove("response-disabled");
+            response.classList.add("response");
+            firstQuestion = false;
+        } else {
+            response.classList.remove("responseOutIn");
+            void response.offsetWidth;
+            response.classList.add("responseOutIn");
+            response.classList.remove("response");
+        }
     } catch (e) {
-
+        console.log("ERROR: "+e)
     }
 }
 
