@@ -39,12 +39,12 @@ function init() {
 }
 
 function printLunch(a) {
-    examplesDownSlide();
     blip.play();
     var date = new Date();
     var response = document.getElementById("response");
     var responseText = document.getElementById("responseText");
     getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate(), function (data) {
+        examplesDownSlide();
         console.log(data);
         let res = "";
 
@@ -123,11 +123,20 @@ function examplesDownSlide() {
             response.classList.remove("response-disabled");
             response.classList.add("response");
             firstQuestion = false;
+            console.log("first")
         } else {
             response.classList.remove("responseOutIn");
             void response.offsetWidth;
             response.classList.add("responseOutIn");
-            response.classList.remove("response");
+            response.addEventListener("webkitAnimationEnd", function () {
+                response.classList.remove("response");
+                void response.offsetWidth;
+                response.classList.add("response");
+            });
+
+                    // console.log("ended")
+
+
         }
     } catch (e) {
         console.log("ERROR: " + e)
