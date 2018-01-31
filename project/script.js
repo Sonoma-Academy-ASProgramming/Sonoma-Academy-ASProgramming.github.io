@@ -151,11 +151,11 @@ function GetSoup() {
     return $("[day_no=" + date + "] div#sonomaacademy_lunch_soup span.item-value").text();
 }
 
-function GetSalad() {
+function GetEntree() {
     return $("[day_no=" + date + "] div#sonomaacademy_lunch_entree span.item-value").text();
 }
 
-function GetEntree() {
+function GetSalad() {
     return $("[day_no=" + date + "] div#sonomaacademy_lunch_salad span.item-value").text();
 }
 
