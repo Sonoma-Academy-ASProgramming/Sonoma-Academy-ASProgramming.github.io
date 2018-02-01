@@ -55,8 +55,8 @@ function printLunch(a) {
     examplesDownSlide();
     blip.play();
     var date = new Date();
-    var response = document.getElementById("response");
-    var responseText = document.getElementById("responseText");
+//    var response = document.getElementById("response");
+//    var responseText = document.getElementById("responseText");
     getLunch(date.getFullYear(), date.getMonth() + 1, date.getDate(), function (data) {
         console.log(data);
         let res = "";
@@ -82,14 +82,51 @@ function printLunch(a) {
             });
             res += "</ul>";
         }
-        $("#title").html("Today's " + (a || "lunch") + ":");
-        //            callback([GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()]);
+        //var res = dataToPrint;
+        var body = document.getElementById("body");
+        try{
+            body.removeChild(document.getElementById("lunchArticle"));
+        }catch(w){
+        }
+        var lunchArticle = document.createElement("article");
+        lunchArticle.setAttribute("id", "lunchArticle");
+        lunchArticle.setAttribute("class","response");
+        var lunchHeader = document.createElement("h1");
+        lunchArticle.appendChild(lunchHeader);
+        lunchHeader.innerHTML = "Today's " + a + ":";
+        var lunchText = document.createElement("p");
+        lunchArticle.appendChild(lunchText);
+        lunchText.innerHTML = res;
+        document.getElementById("body").appendChild(lunchArticle);
 
-        responseText.innerHTML = res;
-
-    });
+        //printData(res);
+//        $("#title").html("Today's " + (a || "lunch") + ":");
+//        //            callback([GetSoup(), GetSalad(), GetEntree(), GetSpecialDietEntree(), GetSides(), GetDessert()]);
+//
+//        responseText.innerHTML = res;
+            });
 }
 
+function printData(dataToPrint){
+    var res = dataToPrint;
+    var body = document.getElementById("body");
+//        try{
+//            //body.removeChild(document.getElementById("lunchArticle"));
+//        }catch(w){
+//
+//        }
+        var lunchArticle = document.createElement("article");
+        lunchArticle.setAttribute("tag", "lunchArticle");
+        lunchArticle.setAttribute("class","response");
+        var lunchHeader = document.createElement("h1");
+        lunchArticle.appendChild(lunchHeader);
+        lunchHeader.innerHTML = "Today's " + a + ":";
+        var lunchText = document.createElement("p");
+        lunchArticle.appendChild(lunchText);
+        lunchText.innerHTML = res;
+        document.getElementById("body").appendChild(lunchArticle);
+
+}
 //
 // function day(increment) {
 //     var date = new Date();
@@ -127,21 +164,20 @@ function examplesDownSlide() {
 
     }
     try {
-        var response = document.getElementById("response");
-        /*
-                response.classList.add("response-disabled");
-                response.classList.remove("response");
-                response.classList.remove("response-fadeoutin");*/
-        if (firstQuestion) {
-            response.classList.remove("response-disabled");
-            response.classList.add("response");
-            firstQuestion = false;
-        } else {
-            response.classList.remove("responseOutIn");
-            void response.offsetWidth;
-            response.classList.add("responseOutIn");
-            response.classList.remove("response");
-        }
+//        var response = document.getElementById("response");
+//        /*
+//                response.classList.add("response-disabled");
+//                response.classList.remove("response");
+//                response.classList.remove("response-fadeoutin");*/
+//        if (firstQuestion) {
+//            response.classList.remove("response-disabled");
+//            response.classList.add("response");
+//            firstQuestion = false;
+//        } else {
+//            response.classList.remove("responseOutIn");
+//            void response.offsetWidth;
+//            response.classList.add("responseOutIn");
+//            response.classList.remove("response");
     } catch (e) {
         console.log("ERROR: " + e)
     }
