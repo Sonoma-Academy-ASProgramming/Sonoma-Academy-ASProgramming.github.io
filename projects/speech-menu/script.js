@@ -30,12 +30,25 @@ function init() {
             'hi *a': function LISTLUNCH(a) {
                 console.log(a);
                 printLunch("")
+            },
+            'do a barrel roll': function barrelRoll() {
+                doABarrelRoll();
             }
         };
 
         annyang.addCommands(command);
         annyang.start();
     }
+}
+
+function doABarrelRoll() {
+    var body = document.getElementById("body");
+    try{
+        body.classList.remove("body-barrelRoll");
+    }catch(e){
+
+    }
+    body.classList.add("body-barrelRoll");
 }
 
 function printLunch(a) {
