@@ -6,9 +6,10 @@
     <style>
         #canVideo {
             position: absolute;
-            height: 100%;
-            width: 100%;
-
+            /*height: 100%;*/
+            /*width: 100%;*/
+            /*top: 0;*/
+            /*left: 0;*/
             z-index: 100;
             background-color: transparent;
         }
@@ -32,64 +33,81 @@
 
         #canvas {
             position: absolute;
-            height: 100%;
-            width: 100%;
+            /*margin: auto;*/
+            /*top: 0;*/
+            /*right: 0;*/
+            /*bottom: 0;*/
+            /*left: 0;*/
+            /*width: 100%;*/
+            /*height: 100%;*/
             z-index: 101;
         }
 
-        #video{
+        #video {
             position: absolute;
+            /*top: 0;*/
+            /*left: 0;*/
+            /*width: 100%;*/
+            /*height: 100%;*/
             /*height: 100%;*/
             /*width: 100%;*/
         }
 
     </style>
+    <script>
+
+
+        function takePhoto() {
+            if (live) {
+                live = false;
+                // context.drawImage(video,w/2-100,h/2-100,200,200);
+                // context.drawImage(video, 0, 0, 640, 480);
+                context.drawImage(video, l, t, w, h, 0, 0, 500, 500);
+                // context.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+                document.getElementById("canvas").classList.add("visible");
+                document.getElementById("canvas").classList.remove("invisible");
+            } else {
+                live = true;
+                document.getElementById("canvas").classList.remove("visible");
+                document.getElementById("canvas").classList.add("invisible");
+            }
+        }
+        //
+        // function getW() {
+        //     return 640;
+        // }
+        //
+        // function getH() {
+        //     return 480;
+        // }
+    </script>
 </head>
 <body>
-<video id="video" width="100%" height="100%" onclick="takePhoto()" autoplay></video>
-<canvas id="canVideo" width="640" height="480" class="fillScr" onclick="takePhoto()"></canvas>
-<canvas id="canvas" width="640" height="480" class="fillScr" onclick="takePhoto()"></canvas>
+<video id="video" width="640" height="480" onclick="takePhoto()" autoplay></video>
+<canvas id="canVideo" width="640" height="480" onclick="takePhoto()"></canvas>
+<canvas id="canvas" width="500" height="500" onclick="takePhoto()"></canvas>
 </body>
 <script>
+
     var live = true;
     var c = document.getElementById("canVideo");
     var ctx = c.getContext("2d");
-    var w = c.width;
-    var h = c.height;
-    ctx.rect(20, 100, 150, 100);
-    // ctx.rect(w/2-100,h/2-100,200,200);
+    var cw = 640;
+    var ch = 480;
+    var h = 250, w=250, l=cw / 2 - w/2,t= ch /  2 - h/2;
+
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    var video = document.getElementById('video');
+    // ctx.rect(20, 100, 150, 100);
+    ctx.rect(cw / 2 - w/2, ch /  2 - h/2, w, h);
     ctx.stroke();
 
-    // Grab elements, create settings, etc.
-    var video = document.getElementById('video');
-
-    // video.width = document.body.clientWidth;
-    // video.height = document.body.clientHeight;
-
-    // Get access to the camera!
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        // Not adding `{ audio: true }` since we only want video now
         navigator.mediaDevices.getUserMedia({video: true}).then(function (stream) {
             video.src = window.URL.createObjectURL(stream);
             video.play();
         });
-    }
-    // Elements for taking the snapshot
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext('2d');
-
-    function takePhoto() {
-        // console.log("taking photo")
-        if (live) {
-            live = false;
-            context.drawImage(video, 0, 0, 640, 480);
-            document.getElementById("canvas").classList.add("visible");
-            document.getElementById("canvas").classList.remove("invisible");
-        } else {
-            live = true;
-            document.getElementById("canvas").classList.remove("visible");
-            document.getElementById("canvas").classList.add("invisible");
-        }
     }
 </script>
 </html>
