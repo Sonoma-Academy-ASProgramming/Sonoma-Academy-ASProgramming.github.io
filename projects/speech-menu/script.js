@@ -2,6 +2,47 @@ var date;
 var blip = new Audio('blip.mp3');
 var firstQuestion = true;
 init();
+var listening = false;
+
+//whenever the mic icon is clicked, make sure it wasn't already listening before starting again
+function micButton() {
+    if(!listening) {
+        startListen();
+    }else{
+        setTimeout(stopListen(), 1000);
+    }
+}
+
+function startListen() {
+    listening = true;
+    document.getElementById("Pulse").style.visibility = "visible";
+    annyang.start();
+}
+
+function stopListen() {
+    listening = false;
+    document.getElementById("Pulse").style.visibility = "hidden";
+    annyang.pause();
+}
+document.addEventListener("keydown", function(key) {
+    if(key.keyCode == 84){
+        annyang.start();
+        console.log("keydown");
+        listening === true;
+        document.getElementById("Pulse").style.visibility = "visible";
+    }
+});
+
+document.addEventListener("keyup", function(key) {
+    if(key.keyCode == 84){
+        console.log('keyup');
+        listening === false;
+        document.getElementById("Pulse").style.visibility = "hidden";
+        setTimeout(function() {
+           annyang.pause();
+        }, 1500);
+    }
+});
 
 /**
  * Initialize Voice Recognition
@@ -10,7 +51,6 @@ function init() {
     /*  Quick check to make sure the annyang library is working correctly.
         This rarely matters for regular web browsers but on mobile it lets the user know that the mic won't work.*/
     if (annyang) {
-        document.getElementById("mic-status").innerHTML = "Listening...";
         var command = {
             'background (color) *thisColor': function (thisColor) {
                 document.getElementById("body").style.backgroundColor = thisColor;
@@ -31,17 +71,18 @@ function init() {
                 console.log(a);
                 printLunch("")
             },
-            'do a barrel roll': function barrelRoll() {
+            '(do a) barrel roll': function barrelRoll() {
                 doABarrelRoll();
+                stopListen();
             }
         };
 
         annyang.addCommands(command);
-        annyang.start();
+        //annyang.start();
     }
 }
 
-function doABarrelRoll() {
+var doABarrelRoll = function() {
     var body = document.getElementById("body");
     try{
         body.classList.remove("body-barrelRoll");
@@ -52,6 +93,7 @@ function doABarrelRoll() {
 }
 
 function printLunch(a) {
+    stopListen();
     examplesDownSlide();
     blip.play();
     var date = new Date();
@@ -95,9 +137,10 @@ function printLunch(a) {
         lunchArticle.appendChild(lunchHeader);
         lunchHeader.innerHTML = "Today's " + a + ":";
         var lunchText = document.createElement("p");
+        lunchText.setAttribute('style', 'color: black');
         lunchArticle.appendChild(lunchText);
         lunchText.innerHTML = res;
-        document.getElementById("body").appendChild(lunchArticle);
+        body.appendChild(lunchArticle);
 
         //printData(res);
 //        $("#title").html("Today's " + (a || "lunch") + ":");
