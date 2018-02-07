@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Image Recognition</title>
+</head>
+
+<body>
+    <p id="result"></p>
+</body>
+<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<script>
+    var arr1 = ["What type of bean shares its name with a human organ?", "refried", "kidney", "mister"];
+    var arr = ["In the year 1900 in the U.S. what were the most popular first names given to boy and girl babies?", "William and Elizabeth", "Joseph and Catherine", "John and Mary", "George and Anne"];
+    var url = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyCnqKvpmxxhINrlI8plU8dMZR2wpmouHX4&cx=011018942370690078241:ev6omm58vui&num=1&q=';
+
+    getResults(arr, function(data) {
+        console.log(data)
+        document.getElementById("result").innerHTML = data[0].name;
+    })
+
+
+
+
+    function getResults(arr, callback) {
+        var results = [];
+        for (var i = 1; i < arr.length; i++) {
+            var query = arr[0] + " " + arr[i];
+            $.ajax({
+                url: url + query,
+                type: "GET",
+                dataType: 'jsonp',
+                cache: false,
+                success: function(data) {
+                    var term = data.queries.request[0].searchTerms.replace(arr[0] + " ", "");
+                    results.push({
+                        name: term,
+                        value: data.searchInformation.totalResults
+                    });
+                    if (results.length == arr.length - 1) {
+
+                        function compare(a, b) {
+                            if (Number(a.value) > Number(b.value))
+                                return -1;
+                            if (Number(a.value) < Number(b.value))
+                                return 1;
+                            return 0;
+                        }
+                        results.sort(compare);
+                        callback(results)
+                    }
+                }
+            });
+        }
+    }
+
+</script>
+
+</html>
