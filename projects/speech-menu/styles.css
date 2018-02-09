@@ -154,7 +154,7 @@ body {
         opacity: 0;
     }
     to {
-        left: 15%;
+        left: 6%;
         opacity: 1;
     }
 }
@@ -167,7 +167,7 @@ body {
     top: 30%;
     padding-left: 30px;
     padding-right: 50px;
-    left: 15%;
+    left: 6%;
     animation: response-fadein 1s forwards;
 }
 
