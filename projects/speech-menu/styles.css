@@ -179,10 +179,10 @@ body {
 .pulse {
     visibility: hidden;
     position: absolute;
-    width: 30%;
-    height: 55%;
-    top: 20%;
-    left: 37.5%;
+    height: 35vw;
+    width: 35vw;
+    top: 16%;
+    left: 35%;
     border-radius: 100%;
     background-color: #30c9e8;
     animation: pulseAnim 2s infinite;
