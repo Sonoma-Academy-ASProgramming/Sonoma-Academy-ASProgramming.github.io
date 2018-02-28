@@ -9,18 +9,23 @@
 </head>
 <body id="body">
 <div class="header">
-    <a href="#" class="feedback">"Feed"back</a>
+    <a href="#">
+        <img class="center-block" class="logo" alt="Logo" title="Luncher" src="./images/logo.png">
+    </a>
 </div>
 <div id="sample-questions" class="sample-questions">
     <h2>ask me:</h2>
     <h3>what's for lunch today?</h3>
+<!--    inline css ftw-->
     <h4 style="opacity:.9;">What's the soup?</h4>
     <h5 style="opacity: .8">what's the entree?</h5>
 </div>
 <p id="data">
 </p>
-<div id="Pulse" class="pulse"></div>
-<img src="./images/speech-btn.png" width="25%" class="mic" onclick="micButton()">
+<div class="mic-container">
+    <div id="Pulse" class="pulse"></div>
+    <img src="./images/speech-btn.png" class="mic" onclick="micButton()">
+</div>
 </body>
 <script src="script.js"></script>
 </html>

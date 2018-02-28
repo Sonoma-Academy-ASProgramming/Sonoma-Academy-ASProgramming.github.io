@@ -1,5 +1,5 @@
 body {
-    background-color: #9cf4a7;
+    background-color: white;
 }
 
 @keyframes barrelRoll {
@@ -65,9 +65,9 @@ body {
 
 .header {
     position: absolute;
-    background-color: #30c9e8;
+    background-color: white;
     width: 100%;
-    height: 15%;
+    height: 23%;
 }
 
 @keyframes link-scaleup {
@@ -173,19 +173,26 @@ body {
 
 @keyframes pulseAnim {
     0% {transform:scale(.9);}
-    100% {transform:scale(1.1); opacity:0;}
+    100% {transform:scale(1.03); opacity:0;}
 }
 
 .pulse {
-    visibility: hidden;
     position: absolute;
-    height: 35vw;
-    width: 35vw;
-    top: 16%;
-    left: 35%;
-    border-radius: 100%;
-    background-color: #30c9e8;
+    top: -15%;
+    left: 25.5%;
+    width: 50%;
+    height: 120%;
+    visibility: hidden;
+    border-radius: 99%;
+    background-color: #2575FC;
     animation: pulseAnim 2s infinite;
+}
+
+.mic-container {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    text-align: center;
 }
 
 @keyframes micMouseOverAnim {
@@ -193,9 +200,8 @@ body {
 }
 
 .mic {
-    position: absolute;
-    top: 25%;
-    left: 40%;
+    position: relative;
+    width: 35%;
 }
 
 .mic:active {
@@ -204,4 +210,15 @@ body {
 
 .mic:hover {
     animation: micMouseOverAnim .2s forwards;
+}
+.mic:not {
+    animation: micMouseOverAnim 3s reverse;
+}
+
+.logo {
+    position: absolute;
+    margin-right: auto;
+    margin-left: auto;
+    left: 30%;
+    top: -38%;
 }
